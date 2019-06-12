@@ -52,7 +52,7 @@ class CalendarController < ApplicationController
       
       time_zone = "Pacific Time (US & Canada)"
       current_date = DateTime.now.in_time_zone(time_zone)
-      min_time = DateTime.new(current_date.year, current_date.month, current_date.day, 7, 0, 0) + 1
+      min_time = DateTime.new(current_date.year, current_date.month, current_date.day, 1, 0, 0, '-7') + 1
       response = service.list_events(calendar_id,
                                      max_results: 1,
                                      single_events: true,
