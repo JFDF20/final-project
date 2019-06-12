@@ -64,12 +64,15 @@ class CalendarController < ApplicationController
       if not response.items.empty?
         event = response.items.first
         event_title = event.summary
-        #event_time = event.start.date_time.strftime("%d/%m/%Y %H:%M %z")
+        event_day = event.start.date_time.strftime("%m/%d/%Y")
+        event_time = event.start.date_time.strftime("%I:%M %p")
       end
       
-      @event_dateandtime = event_time
+      @event_time = event_time
+      @event_day = event_day
+      
       @event_name = event_title
-      @output = min_time.rfc3339
+      #test...@output = min_time.rfc3339
       
       render("bed_time/event_display_page.html.erb")
     end
