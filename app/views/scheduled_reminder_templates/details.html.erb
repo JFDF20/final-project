@@ -1,0 +1,47 @@
+<h1>
+  Scheduled reminder #<%= @scheduled_reminder.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/scheduled_reminders">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_scheduled_reminder_form/<%= @scheduled_reminder.id %>">
+      Edit scheduled reminder
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_scheduled_reminder/<%= @scheduled_reminder.id %>">
+      Delete scheduled reminder
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Send at
+  </dt>
+  <dd>
+    <%= @scheduled_reminder.send_at %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@scheduled_reminder.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@scheduled_reminder.updated_at) %> ago
+  </dd>
+</dl>
+

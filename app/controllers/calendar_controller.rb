@@ -47,7 +47,7 @@ class CalendarController < ApplicationController
       service.authorization = authorize
       
       
-      # Fetch the next 10 events for the user
+      # Fetch the first event tomorrow for the user
       calendar_id = 'primary'
       
       time_zone = "Pacific Time (US & Canada)"
@@ -64,6 +64,7 @@ class CalendarController < ApplicationController
       if not response.items.empty?
         event = response.items.first
         event_title = event.summary
+        @event_datetime = event.start.date_time
         event_day = event.start.date_time.strftime("%m/%d/%Y")
         event_time = event.start.date_time.strftime("%I:%M %p")
       end

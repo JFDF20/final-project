@@ -1,0 +1,27 @@
+<h1>
+  Edit scheduled reminder #<%= @scheduled_reminder.id %>
+</h1>
+
+<hr>
+
+<%= render("scheduled_reminder_templates/validation_failures.html.erb") %>
+
+<form action="/update_scheduled_reminder_record/<%= @scheduled_reminder.id %>" method="post">
+  <div>
+    <label for="send_at">
+      Send at
+    </label>
+
+    <input type="text" id="send_at" name="send_at" value="<%= @scheduled_reminder.send_at %>">
+  </div>
+
+  <button>
+    Update scheduled reminder
+  </button>
+</form>
+
+<hr>
+
+<a href="/scheduled_reminders">
+  Go back
+</a>

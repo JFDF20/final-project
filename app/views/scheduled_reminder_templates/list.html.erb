@@ -1,0 +1,58 @@
+<h1>
+  Scheduled reminder list
+</h1>
+
+<a href="/new_scheduled_reminder_form">
+  Add a new scheduled reminder
+</a>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Send at
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @scheduled_reminders.each do |scheduled_reminder| %>
+  <tr>
+    <td>
+      <%= scheduled_reminder.id %>
+    </td>
+
+    <td>
+      <%= scheduled_reminder.send_at %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(scheduled_reminder.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(scheduled_reminder.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/scheduled_reminders/<%= scheduled_reminder.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

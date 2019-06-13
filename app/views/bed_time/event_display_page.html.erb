@@ -1,11 +1,16 @@
-<h1>Your next event tomorrow is</h1>
+<h1>Your next event tomorrow:</h1>
 <div></div>
-<%=@event_name%>
-<div><h1>at</h1></div>
-<%= @event_time%>
+<h2><%=@event_name%></h2>
+<h2>is at</h2>
+<h2><%= @event_time%></h2>
+<h2>on</h2>
+<h2><%= @event_day%></h2>
 <div></div>
-<div><h1>on</h1></div>
-<%= @event_day%>
+<%=@event_datetime.class%>
 <div></div>
+
+<form action="/send_text" method="post">
+<button>Send reminder text</button>
+</form>
 
 
