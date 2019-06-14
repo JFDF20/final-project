@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Did you go to bed resource:
+
+  # CREATE
+  match("/new_did_you_go_to_bed_form", { :controller => "did_you_go_to_beds", :action => "blank_form", :via => "get" })
+  match("/insert_did_you_go_to_bed_record", { :controller => "did_you_go_to_beds", :action => "save_new_info", :via => "post" })
+
+  # READ
+  match("/did_you_go_to_beds", { :controller => "did_you_go_to_beds", :action => "list", :via => "get" })
+  match("/did_you_go_to_beds/:id_to_display", { :controller => "did_you_go_to_beds", :action => "details", :via => "get" })
+
+  # UPDATE
+  match("/existing_did_you_go_to_bed_form/:id_to_prefill", { :controller => "did_you_go_to_beds", :action => "prefilled_form", :via => "get" })
+  match("/update_did_you_go_to_bed_record/:id_to_modify", { :controller => "did_you_go_to_beds", :action => "save_edits", :via => "post" })
+
+  # DELETE
+  match("/delete_did_you_go_to_bed/:id_to_remove", { :controller => "did_you_go_to_beds", :action => "remove_row", :via => "get" })
+
+  #------------------------------
+
   # Routes for the Scheduled reminder resource:
 
   # CREATE

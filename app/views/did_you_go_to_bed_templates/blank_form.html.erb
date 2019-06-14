@@ -1,0 +1,27 @@
+<h1>
+  Add a new did you go to bed
+</h1>
+
+<hr>
+
+<%= render("did_you_go_to_bed_templates/validation_failures.html.erb") %>
+
+<form action="/insert_did_you_go_to_bed_record" method="post">
+  <div>
+    <label for="went_to_bed_yn">
+      Went to bed yn
+    </label>
+
+    <input type="text" id="went_to_bed_yn" name="went_to_bed_yn" value="<%= @did_you_go_to_bed.went_to_bed_yn %>">
+  </div>
+
+  <button>
+    Create did you go to bed
+  </button>
+</form>
+
+<hr>
+
+<a href="/did_you_go_to_beds">
+  Go back
+</a>

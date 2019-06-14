@@ -1,0 +1,47 @@
+<h1>
+  Did you go to bed #<%= @did_you_go_to_bed.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/did_you_go_to_beds">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_did_you_go_to_bed_form/<%= @did_you_go_to_bed.id %>">
+      Edit did you go to bed
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_did_you_go_to_bed/<%= @did_you_go_to_bed.id %>">
+      Delete did you go to bed
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Went to bed yn
+  </dt>
+  <dd>
+    <%= @did_you_go_to_bed.went_to_bed_yn %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@did_you_go_to_bed.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@did_you_go_to_bed.updated_at) %> ago
+  </dd>
+</dl>
+

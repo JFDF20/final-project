@@ -1,0 +1,7 @@
+<% if @did_you_go_to_bed.errors.any? %>
+  <% @did_you_go_to_bed.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
