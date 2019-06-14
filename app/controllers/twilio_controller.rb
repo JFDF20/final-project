@@ -14,7 +14,7 @@ class TwilioController < ApplicationController
         sms_parameters = {
         :from => ENV.fetch("TWILIO_ASSIGNED_PHONE_NUMBER"),
         :to => ENV.fetch("YOUR_PHONE_NUMBER"),
-        :body => "Reminder to go to bed!"
+        :body => "Reminder to go to bed! Record here: https://bedtime-reminder-production.herokuapp.com/did_you_go_to_beds"
         }
         # Set up a client to talk to the Twilio REST API
         @twilio_client = Twilio::REST::Client.new(twilio_sid, twilio_token)

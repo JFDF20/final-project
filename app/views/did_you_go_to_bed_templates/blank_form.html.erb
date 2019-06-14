@@ -12,8 +12,11 @@
       Went to bed yn
     </label>
 
-    <input type="text" id="went_to_bed_yn" name="went_to_bed_yn" value="<%= @did_you_go_to_bed.went_to_bed_yn %>">
-  </div>
+     <select id="went_to_bed_yn" name="went_to_bed_yn" value="<%= @did_you_go_to_bed.went_to_bed_yn %>">
+       <option value = "yes">yes</option>
+       <option value = "no">no</option>
+     </select>
+   </div>
 
   <button>
     Create did you go to bed

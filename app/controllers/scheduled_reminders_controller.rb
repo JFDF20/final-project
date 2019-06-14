@@ -18,6 +18,7 @@ class ScheduledRemindersController < ApplicationController
   end
 
   def save_new_info
+    #creates new db objects to be saved in the scheduled reminders table
     @scheduled_reminder = ScheduledReminder.new
 
     @scheduled_reminder.send_at = params.fetch("send_at")
