@@ -4,6 +4,10 @@ require 'twilio-ruby'
 class TwilioController < ApplicationController
 
     def text_reminder
+        TwilioController.send_text
+    end
+    
+    def self.send_text
 
         twilio_sid = ENV.fetch("TWILIO_ACCOUNT_SID")
         twilio_token = ENV.fetch("TWILIO_AUTH_TOKEN")

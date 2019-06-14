@@ -2,8 +2,9 @@
 <div></div>
 <h2><%=@event_name%> at <%= @event_time%> on <%= @event_day%> </h2>
 
-<form action="/send_text" method="post">
-<button>Send reminder text</button>
+<form action="/insert_scheduled_reminder_record" method="post">
+    <input type="hidden" name="send_at" id="send_at" value=<%=@event_datetime%>>
+<button>Schedule reminder text</button>
 </form>
 
 <div></div>
